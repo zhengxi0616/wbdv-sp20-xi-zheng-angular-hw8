@@ -12,6 +12,7 @@ import { CourseViewerComponent } from './course-viewer/course-viewer.component';
 import { ModuleListComponent } from './module-list/module-list.component';
 import { LessonTabsComponent } from './lesson-tabs/lesson-tabs.component';
 import { QuizzesComponent } from './quizzes/quizzes.component';
+import { QuizComponent } from './quiz/quiz.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { QuizzesComponent } from './quizzes/quizzes.component';
     CourseViewerComponent,
     ModuleListComponent,
     LessonTabsComponent,
-    QuizzesComponent
+    QuizzesComponent,
+    QuizComponent
   ],
   imports: [
     BrowserModule,
