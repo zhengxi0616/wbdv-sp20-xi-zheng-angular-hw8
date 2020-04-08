@@ -1,0 +1,21 @@
+<div>
+  <app-course-table-component></app-course-table-component>
+</div>
+<div class="row">
+  <div>
+    <a routerLink="/table/courses"><button class="buttonmargin btn btn-outline-primary pull-right" > Back </button></a>
+  </div>
+  <div>
+    <h3 class="buttonmargin">{{course.title}}</h3>
+  </div>
+</div>
+
+  <div class="row">
+    <div class="col-md-3">
+      <app-module-list></app-module-list>
+    </div>
+    <div class="col-md-6">
+      <app-lesson-tabs></app-lesson-tabs>
+    </div>
+  </div>
+

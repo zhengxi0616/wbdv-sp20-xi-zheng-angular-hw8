@@ -1,0 +1,19 @@
+
+<table id="customers">
+  <th>
+    <tr>
+        Module List
+    </tr>
+  </th>
+  <tbody>
+    <tr *ngFor="let module of modules"
+        [class]="{'active': moduleId === module._id}">
+      <td>
+      <a routerLink="/table/courses/{{courseId}}/modules/{{module._id}}">
+        {{module.title}}
+      </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+

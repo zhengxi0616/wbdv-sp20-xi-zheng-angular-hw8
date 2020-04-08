@@ -1,0 +1,39 @@
+<h2 class = "script"><span routerLink=""> Whiteboard</span> </h2>
+
+<div class="col-md-3">
+  <h4> Total Number of Course: {{courses.length}}</h4>
+  <div className="table-responsive-sm">
+
+    <table id = customers>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Last modified</th>
+          <th>Quizzes</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let course of courses"
+        [class]="{'active':course._id === courseId}" >
+       <td>
+         <a routerLink="/table/courses/{{course._id}}">
+         {{course.title}}
+         </a>
+       </td>
+        <td>
+          <p>
+            {{course._updatedAt}}
+          </p>
+        </td>
+        <td>
+          <a routerLink="/table/courses/{{course._id}}/quizzes">
+            Quizzes
+          </a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
