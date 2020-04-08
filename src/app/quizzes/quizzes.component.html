@@ -5,7 +5,21 @@
   <div>
     <a routerLink="/table/courses"><button class="buttonmargin btn btn-outline-primary pull-right" > Back </button></a>
   </div>
-  <div>
-    <h3 class="buttonmargin">Quizzes</h3>
-  </div>
+  <h3 class="buttonmargin">
+    Quizzes
+  </h3>
 </div>
+  <div >
+    <table id="customers">
+      <tbody>
+      <tr *ngFor="let quiz of quizzes">
+        <td>
+          <a routerLink="/table/courses/{{courseId}}/quizzes/{{quiz._id}}">
+            {{quiz.title}}
+          </a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+

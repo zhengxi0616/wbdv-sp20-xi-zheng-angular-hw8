@@ -2,3 +2,25 @@
   margin: 16px;
 
 }
+
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 20%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  color: black;
+}
+
+.active {
+  background: Gainsboro;
+}

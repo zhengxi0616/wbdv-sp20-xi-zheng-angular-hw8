@@ -14,6 +14,7 @@ import { LessonTabsComponent } from './lesson-tabs/lesson-tabs.component';
 import { QuizzesComponent } from './quizzes/quizzes.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { TrueFalseQuestionComponent } from './true-false-question/true-false-question.component';
+import { QuizServiceClient } from './services/quiz.service.client';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { TrueFalseQuestionComponent } from './true-false-question/true-false-que
     FormsModule,
     AppRoutingModule,
   ],
-  providers: [CourseServiceClient, LessonServiceClient, ModuleServiceClient],
+  providers: [CourseServiceClient, LessonServiceClient, ModuleServiceClient, QuizServiceClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
