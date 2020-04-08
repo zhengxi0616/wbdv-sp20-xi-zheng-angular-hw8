@@ -1,1 +1,18 @@
-<p>multiple-choice-question works!</p>
+<h4>{{question.title}}</h4>
+<h5>{{question.question}}</h5>
+<div *ngFor="let option of question.choices">
+  <label>
+    <input [(ngModel)]="answer"
+           type="radio"
+           value="{{option}}"
+           name="{{question._id}}"/> {{option}}
+  </label>
+</div>
+<br/>
+Your answer: {{answer}}
+<br/>
+Correct answer: {{question.correct}}
+<br/>
+
+<span [hidden]="answer !== question.correct">Yay!</span>
+<span [hidden]="answer === question.correct">Oops</span>
