@@ -13,6 +13,7 @@ import { ModuleListComponent } from './module-list/module-list.component';
 import { LessonTabsComponent } from './lesson-tabs/lesson-tabs.component';
 import { QuizzesComponent } from './quizzes/quizzes.component';
 import { QuizComponent } from './quiz/quiz.component';
+import { TrueFalseQuestionComponent } from './true-false-question/true-false-question.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { QuizComponent } from './quiz/quiz.component';
     ModuleListComponent,
     LessonTabsComponent,
     QuizzesComponent,
-    QuizComponent
+    QuizComponent,
+    TrueFalseQuestionComponent
   ],
   imports: [
     BrowserModule,
