@@ -1,3 +1,11 @@
+<div class="row">
+  <div>
+    <h2 class="buttonmargin">Quiz</h2>
+  </div>
+  <div>
+    <a routerLink="/table/courses"><button class="buttonmargin btn btn-outline-primary pull-right" > Back </button></a>
+  </div>
+</div>
 <ul class="list-group">
   <li *ngFor="let question of questions" class="list-group-item">
     <div [ngSwitch]="question.type">
