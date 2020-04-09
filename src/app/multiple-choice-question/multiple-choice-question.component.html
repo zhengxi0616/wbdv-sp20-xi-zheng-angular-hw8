@@ -1,18 +1,24 @@
-<h4>{{question.title}}</h4>
+<h4>Multiple Choice</h4>
 <h5>{{question.question}}</h5>
-<div *ngFor="let option of question.choices">
-  <label>
+
+  <table id="customers">
+    <tbody>
+    <tr *ngFor="let option of question.choices">
+      <td [class]="{red:graded && question.correct !==answer && answer ===option,
+                    green:graded && question.correct === answer && answer ===option,
+                    anothergreen: graded && question.correct !== answer && question.correct ===option}">
     <input [(ngModel)]="answer"
            type="radio"
            value="{{option}}"
-           name="{{question._id}}"/> {{option}}
-  </label>
-</div>
-<br/>
+           name="{{question._id}}"
+    /> {{option}}
+      </td>
+      <p class="textmargin" [hidden]="!graded || answer !== option || answer === question.correct">Wrong!</p>
+      <p class="textmargin" [hidden]="!graded || answer !== option || answer !== question.correct">Right!</p>
+    </tr>
+    </tbody>
+  </table>
 Your answer: {{answer}}
 <br/>
-Correct answer: {{question.correct}}
-<br/>
-
-<span [hidden]="answer !== question.correct">Yay!</span>
-<span [hidden]="answer === question.correct">Oops</span>
+<button class="buttonmargin btn btn-outline-primary pull-right" (click)="grade()"> Grade </button>
+<span class='buttonmargin' [hidden]="!graded">Correct answer:{{question.correct}}</span>

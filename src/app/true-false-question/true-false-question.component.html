@@ -1,25 +1,39 @@
-<h4>{{question.title}}</h4>
+<h4>True of False</h4>
 <h5>{{question.question}}</h5>
-<label>
-  <input type="radio"
-         value="true"
-         [(ngModel)]="answer"
-         name="{{question._id}}"/>
-  True
-</label>
-<br/>
-<label>
-  <input type="radio"
-         value="false"
-         [(ngModel)]="answer"
-         name="{{question._id}}"/>
-  False
-</label>
+<table id="customers">
+  <tbody>
+  <tr>
+    <td [class]="{red:graded && question.correct==='false' && answer ==='true',
+                   green:graded && question.correct === 'true'}">
+
+    <input type="radio"
+           value="true"
+           [(ngModel)]="answer"
+           name="{{question._id}}"/>
+       True
+  </td>
+    <p class="textmargin" [hidden]="!graded || answer !== 'true' || answer === question.correct">Wrong!</p>
+    <p class="textmargin" [hidden]="!graded || answer !== 'true' || answer !== question.correct">Right!</p>
+  </tr>
+    <tr>
+    <td [class]="{red:graded && question.correct === 'true' && answer ==='false',
+                   green:graded && question.correct === 'false'
+                  }">
+      <input type="radio"
+           value="false"
+           [(ngModel)]="answer"
+           name="{{question._id}}"/>
+        False
+    </td>
+      <p class="textmargin" [hidden]="!graded || answer !== 'false' || answer === question.correct">Wrong!</p>
+      <p class="textmargin" [hidden]="!graded || answer !== 'false' || answer !== question.correct">Right!</p>
+    </tr>
+    </tbody>
+</table>
 <br/>
 Your answer: {{answer}}
 <br/>
-Correct answer: {{question.correct}}
-<br/>
+<button class="buttonmargin btn btn-outline-primary pull-right" (click)="grade()"> Grade </button>
+<span class='buttonmargin' [hidden]="!graded">Correct answer:{{question.correct}}</span>
 
-<span [hidden]="answer !== question.correct">Yay!</span>
-<span [hidden]="answer === question.correct">Oops</span>
+

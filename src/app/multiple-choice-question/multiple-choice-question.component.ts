@@ -12,6 +12,10 @@ export class MultipleChoiceQuestionComponent implements OnInit {
   @Input()
   question
   answer = null
+  graded = false
+  grade = () => {
+    this.graded = true
+  }
   ngOnInit(): void {
   }
 
